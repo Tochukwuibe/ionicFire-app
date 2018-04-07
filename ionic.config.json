@@ -1,0 +1,8 @@
+{
+  "name": "ionfire",
+  "app_id": "dce0a735",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
