@@ -26,6 +26,9 @@ public newName: string;
 
   updateProfile(user: any) {
     return this.afs.doc(`users/${user.uid}`).update({displayName: this.newName})
+    .then(res => {
+      this.navCtrl.pop();
+    })
   }
 
 }

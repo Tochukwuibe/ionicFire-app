@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Post } from '../../models/posts.model';
 import { TabsPage } from '../tabs/tabs';
+
+
 
 
 
@@ -13,6 +15,9 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'post-create.html',
 })
 export class PostCreatePage {
+
+  @ViewChild('content') content: HTMLInputElement; 
+  @ViewChild('img') img: HTMLInputElement;
 
  post = {} as Post
 
@@ -24,7 +29,8 @@ export class PostCreatePage {
     public navParams: NavParams,
     public auth: AuthProvider,
     private db: DatabaseProvider,
-    private loading: LoadingController
+    private loading: LoadingController,
+    private toast: ToastController
     ) {
   }
 
@@ -39,10 +45,17 @@ export class PostCreatePage {
       content: `creating post...`
     })
     loader.present()
+
+    const toast = this.toast.create({message: 'Post created Successfully', duration: 3000})
+
     console.log('creating post with ', user , this.post)
     this.db.createPost( user.uid, this.post)
     .subscribe(res => {
-      this.navCtrl.setRoot('HomePage'); // navigatin back to the home page on success
+       // navigatin back to the home page on success
+       this.navCtrl.parent.select(0);
+       this.img.value = '',
+       this.content.value = '';
+      toast.present();
       loader.dismiss()
     })
 
