@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ProfileEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>profileEdit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ng-container *ngIf="this.auth.user$ | async as user">
+
+    <ion-list>
+        <ion-item>
+          <ion-label floating> Name</ion-label>
+          <ion-input type="text" [(ngModel)]="this.newName"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button small (tap)="this.updateProfile(user)" >
+      Save 
+    </button>
+
+
+  </ng-container>
+
+</ion-content>

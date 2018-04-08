@@ -1,0 +1,78 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ng-container *ngIf="this.auth.user$ | async as user">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col col-md-3>
+          <ion-card>
+            <ion-avatar>
+                <img [src]="user.photoURL" alt="">
+            </ion-avatar>
+            
+              <h2>{{user.displayName}}</h2>
+             
+          </ion-card>
+          <button ion-button (tap)="this.onEdit()" full>  Edit</button>
+            
+        </ion-col>
+
+    
+
+
+      </ion-row>
+    
+
+    
+
+
+    
+      <ion-row>
+          <ion-col col-md-3>
+            
+            </ion-col>
+
+        <ion-col col-md-3>
+          <h3>{{user.postCount || 0}}</h3>
+          <p>Posts</p>
+
+        </ion-col>
+
+
+        <ion-col col-md-3>
+            <h3>{{user.followingCount || 0}}</h3>
+            <p>Following</p>
+  
+          </ion-col>
+
+          <ion-col col-md-3>
+            
+            </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+          <ion-col col-md-3>
+           <user-logout></user-logout>
+    
+            </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ng-container>
+
+</ion-content>

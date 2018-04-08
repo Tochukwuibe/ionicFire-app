@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "881955339727",
+    "firebase_url": "https://chatapptoch.firebaseio.com",
+    "project_id": "chatapptoch",
+    "storage_bucket": "chatapptoch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881955339727:android:66a0010ee90f6aec",
+        "android_client_info": {
+          "package_name": "com.jaynus.ionFire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881955339727-b470i724j176p8l6r9o9sd31ihemdsa9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jaynus.ionFire",
+            "certificate_hash": "fe9eaff18355abeea4f76d816ab23b0435cbbdec"
+          }
+        },
+        {
+          "client_id": "881955339727-l9f306o8ra4tco0njote7n9dulu7mp48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJVJVbEpT7afNXuKvF8C4bvoq6_nyQBYs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881955339727-l9f306o8ra4tco0njote7n9dulu7mp48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,12 @@
+<ng-template *ngIf=" this.posts$ | async as posts">
+
+<ion-card *ngFor="let post of  posts">
+
+  <img [src]="post.img || 'https://goo.gl/n62ng4'" alt="">
+
+  <ion-card-content>
+    {{post.content}}
+  </ion-card-content>
+</ion-card>
+
+</ng-template>

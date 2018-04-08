@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>postCreate</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ng-container *ngIf="this.auth.user$ | async as user">
+    <img [src]="post.img || 'https://goo.gl/n62ng4' " alt="">
+
+    <ion-input floating type="text"  [(ngModel)]="post.content"  placeholder=" Post Content"></ion-input>
+
+    <ion-input floating type="text" placeholder=" Image URL" [(ngModel)]="post.img"></ion-input>
+
+    <button ion-fab mini> <ion-icon name="camera"></ion-icon></button>
+
+    <hr>
+
+    <button ion-button full color="secondary"  (tap) ="this. onSubmit(user)" >
+      Create
+    </button>
+
+  </ng-container>
+
+</ion-content>
