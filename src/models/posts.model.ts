@@ -3,6 +3,7 @@ export interface Post {
     createdAt: Date;
     img: string;
     content: string;
-    likesCount: number; 
+    hearts: number; 
     [key: string]: any
+    id?: string;
 }

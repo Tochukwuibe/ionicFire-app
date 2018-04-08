@@ -12,13 +12,19 @@ export class PostFeedComponent implements OnInit {
 
   public posts$: Observable<Post[]>
 
-  constructor(private db: DatabaseProvider, private auth: AuthProvider) {
+  constructor(private db: DatabaseProvider, public auth: AuthProvider) {
     console.log('Hello PostFeedComponent Component');
     
   }
 
   ngOnInit() {
     this.posts$ = this.db.getRecentPosts()
+  }
+
+
+  // tracks the uniqueness of posts 
+  trackByFn(index, post) {
+    return post.id;
   }
 
 }

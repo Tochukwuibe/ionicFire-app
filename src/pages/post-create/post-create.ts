@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Post } from '../../models/posts.model';
 import { TabsPage } from '../tabs/tabs';
+
 
 
 @IonicPage()
@@ -22,7 +23,8 @@ export class PostCreatePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public auth: AuthProvider,
-    private db: DatabaseProvider
+    private db: DatabaseProvider,
+    private loading: LoadingController
     ) {
   }
 
@@ -33,10 +35,15 @@ export class PostCreatePage {
 
 
   onSubmit(user) {
+    const loader = this.loading.create({
+      content: `creating post...`
+    })
+    loader.present()
     console.log('creating post with ', user , this.post)
     this.db.createPost( user.uid, this.post)
     .subscribe(res => {
       this.navCtrl.setRoot('HomePage'); // navigatin back to the home page on success
+      loader.dismiss()
     })
 
   }
