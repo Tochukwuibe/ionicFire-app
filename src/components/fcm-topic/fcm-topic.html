@@ -1,0 +1,25 @@
+<ng-container *ngIf="isSupportedPlatform; else notSupported">
+
+  <button ion-button color="secondary"
+  *ngIf="!isSubscribed"
+  (click)="fcm.subscribeTo(topic)">
+
+  Get {{topic}} notifications
+  </button>
+
+
+
+  <button ion-button color="danger"
+  *ngIf="isSubscribed"
+  (click)="fcm. unsubscribeFrom(topic)">
+
+  Cancel {{topic}} notifications
+  </button>
+
+
+</ng-container>
+
+
+<ng-template #notSupported>
+  <em>You Must be on a native device to recieve topic Notifications</em>
+</ng-template>

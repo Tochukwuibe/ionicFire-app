@@ -44,7 +44,7 @@ public user$: Observable<any>;
 
   // getting the current user as a promise to be used to check the auth status 
   getCurrentUser() {
-    return this.user$.pipe(first()).toPromise()
+    return this.user$.filter(res => !!res).pipe(first()).toPromise()
   }
 
 

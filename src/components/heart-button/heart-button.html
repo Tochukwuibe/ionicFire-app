@@ -1,17 +1,20 @@
-<ion-icon name="heart-outline" *ngIf="!this.isHearted; else hearted"
-(tap)="db.createHearted(userId, post)">
 
-</ion-icon>
+<button ion-button icon-only clear (tap)="db.createHearted(userId, post)">
+    <ion-icon name="heart-outline" *ngIf="!this.isHearted; else hearted"
+    >
+    
+    </ion-icon>
+</button>
 
 
 
 
 <ng-template #hearted>
-
-    <ion-icon name="heart" (tap)="db.removeHearted(userId, post)">
+    <button ion-button icon-only clear (tap)="db.removeHearted(userId, post)">
+    <ion-icon name="heart" >
   
       </ion-icon>
-
+</button>
 </ng-template>
 
 {{heartCount}}

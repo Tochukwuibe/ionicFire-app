@@ -4,6 +4,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Post } from '../../models/posts.model';
 import { TabsPage } from '../tabs/tabs';
+import { AnalyticsProvider } from '../../providers/analytics/analytics';
 
 
 
@@ -30,7 +31,8 @@ export class PostCreatePage {
     public auth: AuthProvider,
     private db: DatabaseProvider,
     private loading: LoadingController,
-    private toast: ToastController
+    private toast: ToastController,
+    private analytics: AnalyticsProvider
     ) {
   }
 
@@ -55,9 +57,18 @@ export class PostCreatePage {
        this.navCtrl.parent.select(0);
        this.img.value = '',
        this.content.value = '';
+
       toast.present();
       loader.dismiss()
     })
 
+    return this.analytics.logEvent('create_post', {category: 'news'})
+
+  }
+
+
+
+  updateURL(e: string) {
+    this.post.img = e;
   }
 }
