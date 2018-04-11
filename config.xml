@@ -91,5 +91,10 @@
         <variable name="APP_ID" value="199896200787439" />
         <variable name="APP_NAME" value="ionFire" />
     </plugin>
+    <plugin name="cordova-plugin-camera" spec="^4.0.2">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the photo library" />
+    </plugin>
+    <plugin name="lycwed-cordova-plugin-admob-free" spec="https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free" />
     <engine name="android" spec="~7.0.0" />
 </widget>

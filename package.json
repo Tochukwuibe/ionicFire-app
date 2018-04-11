@@ -21,6 +21,8 @@
     "@angular/http": "5.2.9",
     "@angular/platform-browser": "5.2.9",
     "@angular/platform-browser-dynamic": "5.2.9",
+    "@ionic-native/admob-free": "^4.7.0",
+    "@ionic-native/camera": "^4.6.0",
     "@ionic-native/core": "4.6.0",
     "@ionic-native/facebook": "^4.6.0",
     "@ionic-native/firebase": "^4.6.0",
@@ -30,6 +32,7 @@
     "@ionic/storage": "2.1.3",
     "angularfire2": "^5.0.0-rc.6",
     "cordova-android": "7.0.0",
+    "cordova-plugin-camera": "^4.0.2",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-facebook4": "1.9.1",
     "cordova-plugin-firebase": "^0.1.25",
@@ -37,9 +40,11 @@
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-promise-polyfill": "0.0.2",
     "firebase": "^4.12.1",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "lycwed-cordova-plugin-admob-free": "git+https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free.git",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.20"
@@ -60,7 +65,13 @@
       "cordova-plugin-facebook4": {
         "APP_ID": "199896200787439",
         "APP_NAME": "ionFire"
-      }
+      },
+      "cordova-plugin-camera": {
+        "PLAY_SERVICES_VERSION": "12.0.1",
+        "CAMERA_USAGE_DESCRIPTION": "App would like to access the camera",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "App would like to access the photo library"
+      },
+      "lycwed-cordova-plugin-admob-free": {}
     },
     "platforms": [
       "android"

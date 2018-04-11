@@ -23,6 +23,12 @@ import { ComponentsModule } from '../components/components.module';
 import { Facebook } from '@ionic-native/facebook';
 import { DatabaseProvider } from '../providers/database/database';
 
+import { Camera } from '@ionic-native/camera';
+import { FcmProvider } from '../providers/fcm/fcm';
+import { AdMobFree } from '@ionic-native/admob-free';
+
+import { AnalyticsProvider } from '../providers/analytics/analytics';
+import { RemoteConfigProvider } from '../providers/remote-config/remote-config';
 
 
 @NgModule({
@@ -53,11 +59,16 @@ import { DatabaseProvider } from '../providers/database/database';
   providers: [
     StatusBar,
     SplashScreen,
+   AdMobFree,
     AuthProvider,
     Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Firebase,
     DatabaseProvider,
+    Camera,
+    FcmProvider,
+    AnalyticsProvider,
+    RemoteConfigProvider
    
   ]
 })
