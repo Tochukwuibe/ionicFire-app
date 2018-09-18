@@ -62,7 +62,7 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-firebase": {},
       "cordova-plugin-facebook4": {
-        "APP_ID": "199896200787439",
+        "APP_ID": "",
         "APP_NAME": "ionFire"
       },
       "cordova-plugin-camera": {
